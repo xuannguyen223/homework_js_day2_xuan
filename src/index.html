@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework JS day2</title>
+
+    <!-- FONT AWESOME  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- MY CSS  -->
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <h1 class="my-6 text-4xl text-indigo-600 font-bold text-center">
+      Bài tập js buổi 2 - Xuân - BC77
+    </h1>
+
+    <div class="container">
+      <!-- On/Off Light -->
+      <section class="area">
+        <h1>Bài tập bật tắt đèn</h1>
+        <div class="timden flex justify-center gap-x-20 items-center mt-10">
+          <button id="bullon" class="btn">Bật đèn</button>
+          <div class="picture">
+            <img id="light" src="./img/pic_bulboff.gif" alt="" />
+            <div
+              class="timden"
+              onmouseover="turnOn()"
+              onmouseout="turnOff()"
+            ></div>
+          </div>
+          <button id="bulloff" class="btn">Tắt đèn</button>
+        </div>
+        <p class="mt-7 text-center text-orange-300 text-xl font-semibold">
+          Ngoài ra bạn có thể di chuột vào tim đèn để giữ cho đèn sáng
+        </p>
+      </section>
+
+      <!-- Show/Hide Password -->
+      <section class="area">
+        <h1>Bài tập hiện mật khẩu</h1>
+        <label for="accountName" class="font-bold text-indigo-400"
+          >Tài khoản</label
+        >
+        <input
+          type="text"
+          id="accountName"
+          placeholder="nhập tài khoản"
+          class="inputDecor"
+        />
+        <label for="" class="font-bold text-indigo-400">Mật khẩu</label>
+        <div class="flex items-center">
+          <input
+            type="password"
+            id="password"
+            placeholder="nhập mật khẩu"
+            class="inputDecor"
+          />
+          <button
+            id="eye"
+            class="text-2xl mt-2 mb-5 -left-14 relative text-indigo-500"
+          >
+            <i class="fa fa-eye-slash"></i>
+          </button>
+        </div>
+
+        <button id="login" class="btn2">Đăng nhập</button>
+      </section>
+
+      <!-- Salary -->
+      <section class="area">
+        <h1>Bài tập tính lương nhân viên</h1>
+        <label for="name" class="font-bold text-indigo-400"
+          >Tên nhân viên</label
+        >
+        <input
+          type="text"
+          id="name"
+          placeholder="nhập tên nhân viên"
+          class="inputDecor"
+        />
+        <label for="salary" class="font-bold text-indigo-400"
+          >Lương cơ bản</label
+        >
+        <input
+          type="text"
+          id="salary"
+          placeholder="nhập lương cơ bản ngày"
+          class="inputDecor"
+        />
+        <label for="workingDay" class="font-bold text-indigo-400"
+          >Số ngày công</label
+        >
+        <input
+          type="text"
+          id="workingDay"
+          placeholder="nhập số ngày công"
+          class="inputDecor"
+        />
+        <button id="totalSalary" class="btn2">Tính lương</button>
+        <p class="result">
+          Nhân viên:
+          <span id="nameResult" class="font-bold text-green-600"></span>
+        </p>
+        <p class="result">
+          Lương thực nhận:
+          <span id="salaryResult" class="font-bold text-green-600"></span>
+        </p>
+      </section>
+
+      <!-- Average score -->
+      <section class="area">
+        <h1>Bài tập tính điểm trung bình</h1>
+        <label for="score1" class="font-bold text-indigo-400"
+          >Môn thứ nhất: Toán</label
+        >
+        <input
+          type="number"
+          id="score1"
+          placeholder="nhập điểm môn Toán"
+          class="inputDecor"
+        />
+        <label for="score2" class="font-bold text-indigo-400"
+          >Môn thứ hai: Lý</label
+        >
+        <input
+          type="number"
+          id="score2"
+          placeholder="nhập điểm môn Lý"
+          class="inputDecor"
+        />
+        <label for="score3" class="font-bold text-indigo-400"
+          >Môn thứ ba: Hóa</label
+        >
+        <input
+          type="number"
+          id="score3"
+          placeholder="nhập điểm môn Hóa"
+          class="inputDecor"
+        />
+
+        <label for="score4" class="font-bold text-indigo-400"
+          >Môn thứ tư: Văn</label
+        >
+        <input
+          type="number"
+          id="score4"
+          placeholder="nhập điểm môn Văn"
+          class="inputDecor"
+        />
+
+        <label for="score5" class="font-bold text-indigo-400"
+          >Môn thứ năm: Anh</label
+        >
+        <input
+          type="number"
+          id="score5"
+          placeholder="nhập điểm môn Anh"
+          class="inputDecor"
+        />
+        <button id="submitScore" class="btn2">Tính điểm trung bình</button>
+        <p class="result">
+          Điểm trung bình 5 môn của bạn là:
+          <span id="averageScore" class="font-bold text-green-600"></span>
+        </p>
+      </section>
+
+      <!-- Exchange Rate -->
+      <section class="area">
+        <h1>Bài tập quy đổi tiền tệ</h1>
+        <label for="name" class="font-bold text-indigo-400"
+          >Tỷ giá USD/VND</label
+        >
+        <input
+          type="number"
+          id="exchangeRate"
+          placeholder="nhập tỷ giá USD/VND hôm nay"
+          class="inputDecor"
+        />
+        <label for="name" class="font-bold text-indigo-400">Số lượng USD</label>
+        <input
+          type="number"
+          id="quantity"
+          placeholder="nhập số lượng USD cần quy đổi"
+          class="inputDecor"
+        />
+        <button id="convert" class="btn2">Quy đổi</button>
+        <p class="result">
+          Số tiền VND mà bạn nhận được sau khi quy đổi
+          <span id="quantityResult" class="font-bold text-green-600"></span> USD
+          là
+          <span id="moneyResult" class="font-bold text-green-600"></span>
+        </p>
+      </section>
+
+      <!-- perimeter, area of ​​rectangle -->
+      <section class="area">
+        <h1>Bài tập tính chu vi, diện tích hình chữ nhật</h1>
+        <label for="name" class="font-bold text-indigo-400"
+          >Chiều rộng (cm)</label
+        >
+        <input
+          type="number"
+          id="width"
+          placeholder="nhập chiều rộng của hình chữ nhật"
+          class="inputDecor"
+        />
+        <label for="name" class="font-bold text-indigo-400"
+          >Chiều dài (cm)</label
+        >
+        <input
+          type="number"
+          id="length"
+          placeholder="nhập chiều dài của hình chữ nhật"
+          class="inputDecor"
+        />
+        <button id="perimeter" class="btn2">Tính chu vi</button>
+        <p class="result">
+          Chu vi hình chữ nhật:
+          <span id="perimeterResult" class="font-bold text-green-600"></span>
+        </p>
+        <button id="area" class="btn2">Tính diện tích</button>
+        <p class="result">
+          Diện tích hình chữ nhật:
+          <span id="areaResult" class="font-bold text-green-600"></span>
+        </p>
+      </section>
+    </div>
+
+    <!-- MY JS  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
